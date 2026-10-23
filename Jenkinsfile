@@ -139,12 +139,22 @@ pipeline {
     post {
         success {
             echo "SUCCESS: ${env.APP_NAME} pipeline completed."
+            emailext (
+                to: 'team-leads@example.com',
+                subject: "Build Success: ${env.JOB_NAME}",
+                body: "Great news! The build passed successfully."
+            )
         }
         unstable {
             echo 'UNSTABLE: Review test reports or quality checks.'
         }
         failure {
             echo 'FAILURE: Open Console Output and find the first meaningful error.'
+            emailext (
+                to: 'sharanappak111@gmail.com',
+                subject: "Build Failed: ${env.APP_NAME}",
+                body: "Check the attached console logs for errors.",
+                    )
         }
         aborted {
             echo 'ABORTED: The build was interrupted.'
