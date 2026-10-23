@@ -1,6 +1,6 @@
 pipeline {
     // Run this pipeline on a dedicated Jenkins agent, not on the controller.
-    agent { label 'linux-maven-tomcat' }
+    agent { label 'slave' }
 
     options {
         timestamps()
