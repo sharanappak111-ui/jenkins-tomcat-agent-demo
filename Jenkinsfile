@@ -140,7 +140,7 @@ pipeline {
         success {
             echo "SUCCESS: ${env.APP_NAME} pipeline completed."
             emailext (
-                to: 'team-leads@example.com',
+                to: 'sharanappak111@gmail.com',
                 subject: "Build Success: ${env.JOB_NAME}",
                 body: "Great news! The build passed successfully."
             )
